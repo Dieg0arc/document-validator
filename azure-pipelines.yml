@@ -1,0 +1,19 @@
+trigger:
+  - main  # Cambia 'main' si tu rama principal tiene otro nombre (como 'master')
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '18.x'
+    displayName: 'Instalar Node.js'
+
+  - script: |
+      npm install
+    displayName: 'Instalar dependencias'
+
+  - script: |
+      npm test
+    displayName: 'Ejecutar pruebas (npm test con cucumber-js)'
