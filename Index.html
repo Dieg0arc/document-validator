@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Documentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Validador de Documentos e Información</h1>
+    
+    <div class="container">
+        <div class="validador">
+            <h2>Validador</h2>
+            <div class="form-group">
+                <label for="tipo-documento">Seleccione tipo de documento:</label>
+                <select id="tipo-documento">
+                    <option value="cedula">Cédula de Ciudadanía</option>
+                    <option value="tarjeta">Tarjeta de Identidad</option>
+                    <option value="telefono">Número de Teléfono</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="numero">Ingrese el número:</label>
+                <input type="text" id="numero" placeholder="Número a validar">
+            </div>
+            
+            <button onclick="validarDocumento()">Validar</button>
+            
+            <div id="resultado-validacion" class="resultado-validacion">
+                <!-- El resultado de la validación aparecerá aquí -->
+            </div>
+        </div>
+        
+        <div class="registro">
+            <h2>Registro de Validaciones</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>Entrada</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody id="registro-validaciones">
+                    <!-- Los registros se añadirán aquí -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="pruebas">
+            <h2>Sistema de Pruebas</h2>
+            <div class="form-group">
+                <label for="tipo-prueba">Tipo de prueba:</label>
+                <select id="tipo-prueba">
+                    <option value="funcional">Pruebas Funcionales</option>
+                    <option value="ui">Pruebas de Interfaz</option>
+                </select>
+            </div>
+            <button onclick="cambiarTipoPrueba()">Ejecutar Pruebas</button>
+            <div id="panel-pruebas" class="panel-pruebas">
+                <!-- Los resultados de las pruebas se mostrarán aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="tests.js"></script>
+    <script src="ui-tests.js"></script>
+</body>
+</html>

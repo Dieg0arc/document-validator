@@ -1,0 +1,332 @@
+/* Tema oscuro y diseño responsivo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+.validador, .registro, .pruebas {
+    background-color: #14141499;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.validador {
+    width: 100%;
+    max-width: 400px;
+}
+
+.registro, .pruebas {
+    width: 100%;
+    max-width: 700px;
+}
+
+h1, h2, h3 {
+    color: #bb86fc; /* Color primario en tema oscuro */
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #3d3d3d;
+    border-radius: 4px;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    box-sizing: border-box;
+    appearance: auto; /* Asegura que el dropdown se muestre correctamente */
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #bb86fc;
+    box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.3);
+}
+
+button {
+    background-color: #bb86fc;
+    color: #121212;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #a370db;
+}
+
+.resultado-validacion {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.valido {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #81c784;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.invalido {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #e57373;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* Estilos específicos para la tabla de registro de validaciones */
+.registro table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    display: table; /* Cambiado de block a table */
+    overflow-x: visible;
+}
+
+.registro th, 
+.registro td {
+    border: 1px solid #3d3d3d;
+    padding: 12px;
+    text-align: left;
+}
+
+.registro th {
+    background-color: #2d2d2d;
+    color: #bb86fc;
+}
+
+/* Estilos para las filas con resultados válidos e inválidos */
+.registro .test-success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #81c784;
+}
+
+.registro .test-fail {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #e57373;
+}
+
+/* Tamaños específicos para cada columna */
+.registro th:nth-child(1),
+.registro td:nth-child(1) { /* ID */
+    width: 10%;
+}
+
+.registro th:nth-child(2),
+.registro td:nth-child(2) { /* Tipo */
+    width: 20%;
+}
+
+.registro th:nth-child(3),
+.registro td:nth-child(3) { /* Entrada */
+    width: 40%;
+}
+
+.registro th:nth-child(4),
+.registro td:nth-child(4) { /* Resultado */
+    width: 30%;
+}
+
+/* Estilos para el sistema de pruebas */
+.panel-pruebas {
+    margin-top: 20px;
+}
+
+#panel-pruebas {
+    overflow: visible;
+}
+
+/* Arreglar la tabla de casos de prueba */
+#panel-pruebas table {
+    width: 100%;
+    table-layout: fixed;
+    display: table;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#panel-pruebas th, 
+#panel-pruebas td {
+    border: 1px solid #3d3d3d;
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word;
+    vertical-align: middle; /* Centrado vertical */
+    writing-mode: horizontal-tb !important; /* Asegura que todo el texto sea horizontal */
+}
+
+/* Ancho específico para cada columna en la tabla de pruebas */
+#panel-pruebas th:nth-child(1), 
+#panel-pruebas td:nth-child(1) { /* ID */
+    width: 8%;
+}
+
+#panel-pruebas th:nth-child(2), 
+#panel-pruebas td:nth-child(2) { /* Función a probar */
+    width: 22%;
+}
+
+#panel-pruebas th:nth-child(3), 
+#panel-pruebas td:nth-child(3) { /* Entradas */
+    width: 20%;
+}
+
+#panel-pruebas th:nth-child(4), 
+#panel-pruebas td:nth-child(4) { /* Acción */
+    width: 15%;
+}
+
+/* Especialmente para la columna de resultados - CORREGIDO */
+#panel-pruebas th:nth-child(5), 
+#panel-pruebas td:nth-child(5) {
+    width: 15%;
+    writing-mode: horizontal-tb !important; /* Fuerza modo de escritura horizontal */
+    text-orientation: mixed !important; /* Asegura texto horizontal */
+    letter-spacing: normal !important;
+    white-space: normal !important;
+    transform: none !important;
+    text-transform: none !important;
+}
+
+/* Corregir específicamente la columna de Estado - CORREGIDO */
+#panel-pruebas th:last-child, 
+#panel-pruebas td:last-child {
+    width: 15%;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    letter-spacing: normal !important;
+    white-space: normal !important;
+    text-transform: none !important;
+    transform: none !important;
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+/* Estilos para los encabezados de secciones */
+#panel-pruebas h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #bb86fc;
+    text-align: center;
+}
+
+/* Mejora del contenedor del plan de pruebas */
+.plan-info {
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+/* Estilos para el selector de estado en la tabla */
+.test-status {
+    width: 100%;
+    min-width: 120px;
+    padding: 8px;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #3d3d3d;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+/* Mejoras en las listas ordenadas dentro de los pasos */
+#panel-pruebas ol {
+    padding-left: 20px;
+    margin: 0;
+}
+
+#panel-pruebas li {
+    margin-bottom: 8px;
+}
+
+/* Estilos adicionales para mejorar la visualización general */
+.plan-info ul {
+    padding-left: 20px;
+}
+
+.plan-info li {
+    margin-bottom: 5px;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .validador, .registro, .pruebas {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    #panel-pruebas table, .registro table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    #panel-pruebas th, 
+    #panel-pruebas td, 
+    .registro th, 
+    .registro td {
+        min-width: 100px;
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .validador, .registro, .pruebas {
+        padding: 15px;
+    }
+    
+    #panel-pruebas th, 
+    #panel-pruebas td, 
+    .registro th, 
+    .registro td {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
