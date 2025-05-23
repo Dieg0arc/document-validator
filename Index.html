@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validador de Documentos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <h1>Validador de Documentos e Información</h1>
-    
+
     <div class="container">
         <div class="validador">
             <h2>Validador</h2>
@@ -20,19 +22,19 @@
                     <option value="telefono">Número de Teléfono</option>
                 </select>
             </div>
-            
+
             <div class="form-group">
                 <label for="numero">Ingrese el número:</label>
                 <input type="text" id="numero" placeholder="Número a validar">
             </div>
-            
+
             <button onclick="validarDocumento()">Validar</button>
-            
+
             <div id="resultado-validacion" class="resultado-validacion">
                 <!-- El resultado de la validación aparecerá aquí -->
             </div>
         </div>
-        
+
         <div class="registro">
             <h2>Registro de Validaciones</h2>
             <table>
@@ -49,7 +51,7 @@
                 </tbody>
             </table>
         </div>
-        
+
         <div class="pruebas">
             <h2>Sistema de Pruebas</h2>
             <div class="form-group">
@@ -70,4 +72,5 @@
     <script src="tests.js"></script>
     <script src="ui-tests.js"></script>
 </body>
+
 </html>

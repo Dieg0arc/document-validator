@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "test": "cucumber-js"
+    "test-unit": "mocha unit-tests.js",
+    "test-integration": "mocha integration-tests.js",
+    "test-system": "mocha system-tests.js",
+    "test-performance": "mocha performance-tests.js",
+    "test": "cucumber-js",
+    "start": "live-server"
   },
   "keywords": [],
   "author": "",
@@ -11,7 +16,9 @@
   "devDependencies": {
     "@cucumber/cucumber": "^11.2.0",
     "chai": "^5.2.0",
-    "jsdom": "^26.1.0"
+    "jsdom": "^26.1.0",
+    "live-server": "^1.2.2",
+    "mocha": "^11.4.0"
   },
   "dependencies": {
     "agent-base": "^7.1.3",
